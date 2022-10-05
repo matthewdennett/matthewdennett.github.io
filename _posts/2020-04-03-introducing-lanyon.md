@@ -1,7 +1,13 @@
 ---
 layout: post
-title: Introducing Lanyon
+title: "Introducing Lanyon"
+date:   2022-04-03 21:17:42 +1000
+tags: jekyll update code
 ---
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+<!--more-->
+Jekyll requires blog post files to be named according to the following format:
+
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
 Hello 

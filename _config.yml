@@ -17,6 +17,8 @@ linkedin:           'https://www.linkedin.com/in/matthew-dennett'
 github:             'https://github.com/matthewdennett'
 
 show_excerpts: true
+excerpt_separator: <!--more-->
+show_related_tags: true
 
 # Gems
 #plugins:

@@ -41,7 +41,7 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "museo-sans",sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,16 +80,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5em;
 }
 /*
- * Applist list items
+ * certlist list items
  *
  */
 
-#applist {
+#certlist {
   width: 30em;
   margin: 2.0em auto;
 }
 
-#applist li {
+#certlist li {
   list-style-type: none;
   float:left;
   display:inline;
@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align:center;
 }
 
-#applist img {
+#certlist img {
   margin:0 0 0.3em 0 !important;
   width:100px;
   height:100px;
@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   max-width: 28rem;
+  overflow:auto;				
 }
 @media (min-width: 38em) {
   .container {
@@ -397,6 +398,10 @@ a.sidebar-nav-item:focus {
   font-size: 75%;
   color: #999;
 }
+.related-posts li tags {
+  font-size: 60%;
+  color: #999;
+}
 .related-posts li a:hover {
   color: #268bd2;
   text-decoration: none;
@@ -404,7 +409,9 @@ a.sidebar-nav-item:focus {
 .related-posts li a:hover small {
   color: inherit;
 }
-
+.related-posts li a:hover tags {
+  color: inherit;
+}
 
 /*
  * Pagination
