@@ -10,7 +10,7 @@ I have a strong background in Cisco Networking but have vast intrest in applicat
 
 ## Work
 
-I started as a Network Engineer in 2012 working directly in the Government sector, planning, deploying and maintaining highly available, secure networks accross Australia and overseass. Working for a service intergrator since 2017, I have work with and delivered a vast range of secure network solution for small and large enterprises. The past couple years I've had a much larger focus on deliving security and automated solutions. 
+Starting as a Network Engineer in 2012 working directly in the Government sector, planning, deploying and maintaining highly available, secure networks accross Australia and overseass. Working for a service intergrator since 2017, I have work with and delivered a vast range of secure network solution for small and large enterprises. The past couple years I've had a much larger focus on deliving security and automated solutions. 
 
 ## Certifications
 
