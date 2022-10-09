@@ -4,7 +4,7 @@ tagline:             ''
 description:         ''
 url:                 matthewdennett.github.io
 baseurl:             ''
-paginate:            5
+#paginate:            5
 permalink:           pretty
 
 # About/contact
@@ -20,8 +20,8 @@ show_excerpts: true
 excerpt_separator: <!--more-->
 show_related_tags: true
 
-# Gems
-#plugins:
+# # Gems
+# plugins:
 #  - jekyll-paginate
 
 # Custom vars
