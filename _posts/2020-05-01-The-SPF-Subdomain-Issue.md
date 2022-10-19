@@ -15,8 +15,8 @@ It might just be that 1 DNS A record needs another 2 TXT records to close the ga
 ## SPF 
 SPF is a pretty straight forward concept - we simply publish a DNS TXT record that lists the permitted mail servers for a domain. 
 
-```
-hello.com.  3600    IN  TXT "v=spf1 ip4:4.3.2.1 include:spf.protection.outlook.com -all"
+```bash
+hello.com.  3600  IN  TXT "v=spf1 ip4:4.3.2.1 include:spf.protection.outlook.com -all"
 ```
 
 It's simple to implement and is extremely effective at what it does, however it is worth noting a couple things:
@@ -30,22 +30,22 @@ As subdomains are not covered by a SPF record, emails sent from a subdomain (reg
 
 ## Wildcard Records
 
-[rfc7208](https://datatracker.ietf.org/doc/html/rfc7208#section-3.5) has a really interesting section that alludes to the issue but doesn't clearly articulate the problem or requirement.
+[RFC7208](https://datatracker.ietf.org/doc/html/rfc7208#section-3.5) has a really interesting section that alludes to the issue but doesn't clearly articulate the problem or requirement.
 
 With the use of wildcard records we can return results when a request is made for a non-existent record. This allows us to start closing the gaps on the SPF subdomain issues by implementing a wildcard TXT record with either your standard SPF data or a SPF NULL (v=spf1 -all) to be returned for non-existent records. Here is an example of what that would look like:
 
 ```bash
 # Protection for the base domain
-example.com.		3600	IN	TXT	"v=spf1 ip:1.2.3.4 -all"
+example.com.  3600  IN  TXT	"v=spf1 ip:1.2.3.4 -all"
 
 # Protect any non-existent subdomain
-*.example.com.		3600	IN	TXT	"v=spf1 -all"
+*.example.com.  3600  IN  TXT	"v=spf1 -all"
 ```
 
 It's important here to think about wildcard records correctly. The "*" in this case doesn't mean "any", like it does in every other context. Here, it should be thought as a last resort record or as if nothing exists. 
 
 ## Real subdomains
-With the behaviour of wildcard records only working when no record exists, we need to directly address any instance where we create a subdomain. So each time we add an A record, we are effectively creating a new subdomain which we need to address. Luckily, we can just take the same approach as before to protect the subdomain. The example below shows how that would work:
+With the behavior of wildcard records only working when no record exists, we need to directly address any instance where we create a subdomain. So each time we add an A record, we are effectively creating a new subdomain which we need to address. Luckily, we can just take the same approach as before to protect the subdomain. The example below shows how that would work:
 
 ```bash
 # Protection for the base domain and it non-existent subdomains
