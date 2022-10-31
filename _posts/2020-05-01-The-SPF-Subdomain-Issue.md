@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The SPF Subdomain Issue
-tags: DNS Security
+tags: DNS Security SPF Domains
 ---
 
 While setting up some new DNS records for a mail gateway migration, I found myself reading the related RFCs which we all know tends to hurt the brain but this time it lead to something quite interesting. After reading the ins and outs of SPF, DKIM and DMARC I could see several common implementation scenarios that would allow carefully crafted emails to circumvent the implemented controls, as SPF doesn't apply to subdomains.
