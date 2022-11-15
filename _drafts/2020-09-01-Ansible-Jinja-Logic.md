@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Handy Ansible Logic
+title: Ansible Jinja Logic
 tags: Automation Ansible Tips Jinja
 ---
 
-Recently I was writing what initially looked like a pretty straight forward ansible play. Everything was progressing quite well until I came to a point where I needed to set a a variable only when, another variable was set. My first pass at this logic was to repeat the task, and control which task was run with a  ```when:``` statement. This worked, but just wasn't nice with all of the duplicated code. I just knew there was a better way and there is.   
-
+In hte post [Handy Ansible Logic](link) I described a situation where I move some ansible logic out of ```when:``` statement and into some inline Jinja to achieve a much cleaner solution. Recently, I had a similar situation but needed to extend the Jinja. This time I needed to dynamically construct the input variable I needed to pass into a module.  
+  
 <!--more-->
 
 # The Problem
