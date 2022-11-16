@@ -31,7 +31,7 @@ The modules default settings work perfect for about 90% of the situation where I
 
 You can find the [module documentation here](https://docs.python.org/3/library/http.server.html), but here's a quick rundown of the options that I commonly use. 
 
-#### Port Number
+### Port Number
 
 The listening port can set by passing the desired port in as a positional parameter to the module
 
@@ -40,7 +40,7 @@ user@host :~/tmp$ python3 -m http.server 1234
 Serving HTTP on 0.0.0.0 port 1234 (http://0.0.0.0:1234/) ...
 ```
 
-#### Web Directory
+### Web Directory
 
 The web root can be specified with ```-d``` or ```--directory```
 
@@ -49,7 +49,7 @@ user@host :~/tmp$ python3 -m http.server --directory /tmp/www/
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ```
 
-#### IP Binding
+### IP Binding
 
 Use the ```-b``` or ```--bind``` to bind to a specific IP that exists  on the local machine
 
