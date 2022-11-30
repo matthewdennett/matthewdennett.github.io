@@ -4,7 +4,7 @@ title: Handy Ansible Logic
 tags: Automation Ansible Tips Jinja
 ---
 
-Recently I was writing what initially looked like a pretty straight forward ansible play. Everything was progressing quite well until I came to a point where I needed to set a a variable only when, another variable was set. My first pass at this logic was to repeat the task, and control which task was run with a  ```when:``` statement. This worked, but just wasn't nice with all of the duplicated code. I just knew there was a better way and there is.   
+Recently I was writing what initially looked like a pretty straight forward ansible play. Everything was progressing quite well until I came to a point where I needed to set one variable, only when another variable was set. My first pass at this logic was to repeat the task, and control which task was run with a  ```when:``` statement. This worked, but just wasn't ideal with all of the duplicated code. I just knew there had to be a better way and there was.   
 
 <!--more-->
 
@@ -12,7 +12,7 @@ Recently I was writing what initially looked like a pretty straight forward ansi
 
 In this situation I needed to set the module parameter ```parm_b``` to the value of a variable ```var_two``` when ```var_one``` was set to a certain value, but in all other cases parameter ```parm_b``` needed to be set to ```var_three```. 
 
-Here's the a cut down version of my first approach. 
+Here's a cut down version of my first approach: 
 
 ```yml
 {% raw %}
@@ -46,7 +46,7 @@ Here's the a cut down version of my first approach.
 {% endraw %}
 ```
 
-Heres the output of the above play.
+Here's the output of the above play:
 ```bash
 {% raw %}
 user@box:~/$ ansible-playbook example1.yml
@@ -68,7 +68,7 @@ ok: [localhost] => {
 }
 {% endraw %}
 ```
-or, when we pass in a value for ```var_one``` to trigger the other condition. 
+or, when we pass in a value for ```var_one``` to trigger the other condition: 
 
 ```bash
 {% raw %}
@@ -92,11 +92,11 @@ ok: [localhost] => {
 {% endraw %}
 ```
 
-It's really straight forward and in this simple example the duplication isn't too bad, but you can see how this would get ugly quickly if you'r using a module that needs 15 or more parameters to be set. Or if you have multiple parameters that need similar conditional logic, that would blow out really quickly. Even just setting 3 parameters with this logic would require 8 different tasks to cover the possibilities and some pretty nasty login in the ```when:``` statements.
+It's really straight forward and in this simple example the duplication isn't too bad, but you can see how this would get ugly pretty quickly if you're using a module that needs lots of parameters to be set, or if you have multiple parameters that need similar conditional logic - that would blow out really quickly. Even just setting 3 parameters with this logic would require 8 different tasks to cover the possibilities and some pretty nasty logic in the ```when:``` statements.
 
 # The Solution
 
-The answer to this mess we have turns out to be quite neat. We move the conditional logic out of the ```when:``` and into the call to the variable - the jinja statement, as variables in ansible are jinja templates. Here is what that would look like.
+The answer to this mess turns out to be quite neat. We move the conditional logic out of the ```when:``` and into the call to the variable, the jinja statement, as variables in ansible are jinja templates. Here is what that would look like:
 
 ```yaml
 {% raw %}
@@ -122,9 +122,9 @@ The answer to this mess we have turns out to be quite neat. We move the conditio
 {% endraw %}
 ```
 
-As you can see we have been able to remove the duplicated code and the when statement. What I really like is the if condition doesn't make the logic hard to read. Its almost plain english. 
+As you can see we have been able to remove the duplicated code and the when statement. What I really like is the if condition doesn't make the logic hard to read - it's almost plain english. 
 
-Heres the output of the above improved play logic.
+Here's the output of the above improved play logic:
 
 ```bash 
 {% raw %}
@@ -145,7 +145,7 @@ ok: [localhost] => {
 {% endraw %}
 ```
 
-and, again to trigger the other condition
+And, again to trigger the other condition:
 
 ```bash 
 {% raw %}
@@ -166,7 +166,7 @@ ok: [localhost] => {
 {% endraw %}
 ```
 
-We can still use jinja's filters like any other variable with this approach too. 
+We can still use jinja's filters like any other variable with this approach too: 
 
 ```yaml
 {% raw %}
@@ -178,7 +178,7 @@ We can still use jinja's filters like any other variable with this approach too.
 
 {% endraw %}
 ```
-Since learning how too use this logic it has been really helpful in quite a few situations. 
+Since learning how to use this logic it has been really helpful in quite a few situations. 
 
 All of the examples shown are available [here](https://github.com/matthewdennett/2020-06-01-Handy-Ansible-Logic) if you would like a copy. 
 
