@@ -6,7 +6,7 @@ title: Home
 ## About
 
 I am a Network Engineer, working as an Automation and Security Engineer, living in Brisbane, Australia. 
-I have a strong background in Cisco Networking but have a broad range of interests in application delivery, security, automation and much more. 
+I have a strong background in Cisco networking but have a broad range of interests in application delivery, security, automation and much more. 
 
 ## Work
 
