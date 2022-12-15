@@ -64,5 +64,5 @@ SPF is a fantastic tool. It's simple, easy to implement and doesn't really cost 
 
 But for now, my new A record will be accompanied by 2 TXT records. 
 
-A final note - the 4 DNS hosting services that I have worked with since learning this don't allow the creations of wildcard records. When asked why, the providers response is, "no one has asked for wildcard records before".
+A final note - the 4 DNS hosting services that I have worked with since learning this don't allow the creation of wildcard records. When asked why, the providers response is, "no one has asked for wildcard records before".
 
