@@ -180,5 +180,5 @@ We can still use jinja's filters like any other variable with this approach too:
 ```
 Since learning how to use this logic it has been really helpful in quite a few situations. 
 
-All of the examples shown are available [here](https://github.com/matthewdennett/2020-06-01-Handy-Ansible-Logic) if you would like a copy. 
+All of the examples shown are available [here](https://github.com/matthewdennett/2022-06-01-Handy-Ansible-Logic) if you would like a copy. 
 

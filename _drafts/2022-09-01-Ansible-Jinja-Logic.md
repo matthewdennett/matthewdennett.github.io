@@ -4,7 +4,7 @@ title: Ansible Jinja Logic
 tags: Automation Ansible Tips Jinja
 ---
 
-In the post [Handy Ansible Logic](link) I described a situation where I move some ansible logic out of ```when:``` statement and into some inline Jinja to achieve a much cleaner solution. Recently, I had a similar situation but needed to extend the Jinja. This time I needed to dynamically construct the input variable I needed to pass into a module.  
+In the post [Handy Ansible Logic](https://mdennett.id.au/2020/06/01/Handy-Ansible-Logic/) I described a situation where I move ansible logic out of ```when:``` statement and into some inline Jinja to achieve a much cleaner solution. Recently, I had a similar situation but needed to extend what I was doing in the Jinja. This time I needed to dynamically construct the input variable I needed to pass into a module.  
   
 <!--more-->
 
