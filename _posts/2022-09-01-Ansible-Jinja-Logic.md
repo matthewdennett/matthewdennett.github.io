@@ -37,7 +37,7 @@ server_list2: [ ]
 
 {% endraw %}
 ```
-That is all pretty straight forward. 
+That's all pretty straight forward. 
 
 
 Now, the goal of this play was to be executed by others in the team, and require the minimal amount of variables defined for it to function. Especially, if the server_list was to be empty, they should be able to omit the server_list variable completely and the task still function as expected. We could use the ```| default( [ ] )``` operator and set a empty list if the server_list variable wasn't set. That would work, but that still meant that when a list was passed in we had to define the type for each server in the list. This is where the Jinja logic is really handy.
