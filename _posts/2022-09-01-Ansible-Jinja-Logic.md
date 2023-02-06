@@ -29,9 +29,9 @@ The module I was working with needed a parameter set to a list of servers. Each 
 {% raw %}
 server_list1:
   - name: 10.1.1.10
-	type: 'IPv4'
+    type: 'IPv4'
   - name: 2001:db8::10:1:1:10
-	type: 'IPv6'
+    type: 'IPv6'
 
 server_list2: [ ]
 
