@@ -1,0 +1,29 @@
+# Setup
+title:               Matt Dennett
+tagline:             ''
+description:         ''
+url:                 ''
+baseurl:             ''
+#paginate:            5
+permalink:           pretty
+
+# About/contact
+author:
+  name:              Matt Dennett
+  email:             dennett.matthew+gh@gmail.com
+
+twitter:            'https://twitter.com'
+linkedin:           'https://www.linkedin.com/in/matthew-dennett'
+github:             'https://github.com/matthewdennett'
+
+show_excerpts: true
+excerpt_separator: <!--more-->
+show_related_tags: true
+
+# # Gems
+# plugins:
+#  - jekyll-paginate
+
+# Custom vars
+version:             1.1.0
+google_analytics_id: G-EVB4GQGVC9
