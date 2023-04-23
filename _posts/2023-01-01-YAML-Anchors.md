@@ -1,12 +1,15 @@
 ---
 layout: post
 title: YAML Anchors
-tags: YAML Ansible tips
+tags:
+- YAML
+- Ansible
+show: true
 ---
 
 In Ansible, you can define variables in a variety of places, including inventory files, playbook files, and role defaults and vars files. When defining variables, you can use YAML anchors and aliases to reduce repetition and make your code more readable.
 
-```yaml
+{% highlight yaml linenos %}
 vars:
   # Define an anchor called "common_vars"
   common_vars: &common_vars
@@ -17,13 +20,14 @@ vars:
   prod_vars: &prod_vars
       <<: *common_vars
       environment: production
-```
+{% endhighlight %}
+
 
 <!--more-->
 
 Here's an example of using anchors and aliases in an Ansible playbook:
 
-```yaml
+{% highlight yaml linenos %}
 ---
 - name: Example 1
   hosts: localhost
@@ -61,16 +65,15 @@ Here's an example of using anchors and aliases in an Ansible playbook:
       debug:
         var: app2_vars
 ...
+{% endhighlight %}
 
-...
-```
 In this example, we define an anchor called "common_vars" that contains some common variables used by multiple applications. We then use the alias syntax ```*``` to define two new variables, "app1_vars" and "app2_vars", that use the "common_vars" anchor and add additional information specific to each application.
 
 Note that the "servers" key in the "app1_vars" and "app2_vars" variables overrides the "servers" key in the "common_vars" anchor, so each application has its own list of servers.
 
 Finally, we use the variables in tasks to display the configuration of each application. Below is the output for each application, which includes the common variables and the additional information specific to each application.
 
-```bash
+{% highlight bash linenos %}
 user@box:~/$ ansible-playbook example1.yml
 
 PLAY [Example 1] **************************************************************
@@ -100,14 +103,16 @@ ok: [localhost] => {
 }
 
 PLAY RECAP ********************************************************************
-```
+{% endhighlight %}
+
 
 Using anchors and aliases can be particularly helpful when defining complex variables that are used in multiple places in your playbook or role. Instead of copy-pasting the same data multiple times, you can define an anchor once and then use it throughout your code. This can make your code more readable, easier to maintain, and less error-prone.
 
 
-Though anchors and aliases are really handy it can be easy over use them or used them when there is no benefit from using them. Here is one example that highlights a situation where I have found myself using an anchor with no benefit. 
+Though anchors and aliases are really handy it can be easy over use them or used them when there is no benefit from using them. Here is one example that highlights a situation where I have found myself using an anchor with no benefit.
 
-```yaml
+{% highlight yaml linenos %}
+
 ---
 - name: Example 2
   hosts: localhost
@@ -144,13 +149,13 @@ Though anchors and aliases are really handy it can be easy over use them or used
       debug:
         var: app_list2
 ...
-```
+{% endhighlight %}
 
 In this example, we define an anchor called "app1_vars" and "app2_vars" that contains some common variables describing our applications. We then use the alias syntax to define a list of our applications, "app_list1", that use the anchors of app1 and app2. Next we define the list "app2_list" using the regular YAML variable syntax.
 
 Here both lists that have been created are identical. The use of an anchor in a situation like this may just be making the code harder to read and possibly a bit harder for the next person to understand what the goal was.
 
-```bash
+{% highlight bash linenos %}
 user@box:~/$ ansible-playbook example2.yml
 PLAY [Example 3] **************************************************************
 
@@ -191,7 +196,7 @@ ok: [localhost] => {
 }
 
 PLAY RECAP ********************************************************************
-```
+{% endhighlight %}
 
 In summary, YAML anchors and aliases are a powerful feature that can help you reduce repetition in your Ansible playbooks and roles and make them more readable and maintainable. By using anchors and aliases, you can avoid copy-pasting the same data multiple times and make it easier to update your variables in the future.
 

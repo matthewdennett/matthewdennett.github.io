@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <div class="card-title">Skills</div>
+    </div>
+    <div class="mdl-grid mdl-card__supporting-text">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="emphasize">Technologies/Vendors</div>
+        </div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="subtext">WAN, LAN, Wireless, Data Center, Network Security, Firewalls, Load Balancing, Cisco, Fortinet, F5, Tenable, PaloAlto, Aruba, Infoblox, VmWare</div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="emphasize">Languages</div>
+        </div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="subtext">Python, Ansible, Powershell</div>
+        </div>
+    </div>
+</div>
+
+{% assign posts = site.work_experience | sort: 'order' | reverse %}
+<div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <div class="card-title">Work</div>
+    </div>
+    <div class="mdl-grid mdl-card__supporting-text">
+        {% for post in posts %}
+            {% include 2-column-post-display.html post-content=post important=post.company sub=post.title %}
+        {% endfor %}
+    </div>
+</div>
+
+{% assign posts = site.certifications | sort: 'order' %}
+<div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <div class="card-title">Certifications</div>
+    </div>
+    <div class="mdl-grid mdl-card__supporting-text">
+        <ul id="certlist">
+            {% for post in posts %}
+                {% include cert.html post-content=post title=post.title name=post.name %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <div class="card-title">Education</div>
+    </div>
+    <div class="mdl-grid mdl-card__supporting-text">
+        {% for post in site.education %}
+            {% include 2-column-post-display.html post-content=post important=post.company sub2=post.title sub3=post.note %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
