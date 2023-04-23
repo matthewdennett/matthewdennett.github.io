@@ -1,16 +1,15 @@
 ---
 layout: large_card
-title: "infoblox-ansible"
-company: "InfobloxOpen"
-display_date: "March 2023"
+title: "DNS Checker"
+company: "Personal Project"
+display_date: #TODO
 tags:
 - Python
-- Ansible
-- Open Source
-show: true
-link: https://github.com/infobloxopen/infoblox-ansible
+- DNS
+show: false
+link: #TODO
 link_name: Github
-order: 2
+order: 4
 ---
 
-This project is an ongoing contribution to the Ansible modules for interfacing to Infoblox systems.
+#TODO

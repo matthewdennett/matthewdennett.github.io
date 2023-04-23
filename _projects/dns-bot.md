@@ -1,6 +1,6 @@
 ---
 layout: large_card
-title: "DMS Checker"
+title: "DNS Bot"
 company: "Personal Project"
 display_date: #TODO
 tags:
@@ -9,7 +9,7 @@ tags:
 show: false
 link: #TODO
 link_name: Github
-order: 4
+order: 3
 ---
 
 #TODO
