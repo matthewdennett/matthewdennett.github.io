@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% assign posts = site.projects | sort: 'order' | reverse %}
+{% for post in posts %}
+{% if post.show == true %}
+<div class="mdl-cell mdl-card mdl-shadow--4dp">
+    <!--<div class="mdl-card__media">-->
+        <!--<img class="article-image" src=" images/example-work01.jpg" border="0" alt="">-->
+    <!--</div>-->
+    <div class="mdl-card__title text-card-top">
+        <div class="text-card-title">{{ post.title }}</div>
+        <div class="subtext clear-card-subtext center-text">{{ post.company }}</div>
+        <div class="subtext clear-card-subtext center-text">{{ post.display_date }}</div>
+    </div>
+
+    <div class="mdl-card__supporting-text flex-column no-top-padding">
+        <div class="portfolio-description">
+
+            {{ post.excerpt }}
+
+        </div>
+        <div class="flex-center flex-wrap">
+            {% for tag in post.tags %}
+                {% include chip.html name=tag %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if post.link %}
+        <div class="mdl-card__actions mdl-card--border center-text">
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href={{ post.link }}>
+                {% if post.link_name == "Github" %}
+                    <i class="fa fa-github icon-button icon-margin" aria-hidden="true"></i>
+                {% else %}
+                    {{ post.link_name }}
+                {% endif %}
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endif %}
+{% endfor %}

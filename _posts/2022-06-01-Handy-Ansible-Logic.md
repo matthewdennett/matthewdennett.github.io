@@ -1,20 +1,24 @@
 ---
 layout: post
 title: Handy Ansible Logic
-tags: Automation Ansible Tips Jinja
+tags:
+- Automation
+- Ansible
+- Jinja
+show: true
 ---
 
-Recently I was writing what initially looked like a pretty straight forward ansible play. Everything was progressing quite well until I came to a point where I needed to set one variable, only when another variable was set. My first pass at this logic was to repeat the task, and control which task was run with a  ```when:``` statement. This worked, but just wasn't ideal with all of the duplicated code. I just knew there had to be a better way and there was.   
+Recently I was writing what initially looked like a pretty straight forward ansible play. Everything was progressing quite well until I came to a point where I needed to set one variable, only when another variable was set. My first pass at this logic was to repeat the task, and control which task was run with a  ```when:``` statement. This worked, but just wasn't ideal with all of the duplicated code. I just knew there had to be a better way and there was.
 
 <!--more-->
 
-# The Problem
+#### The Problem
 
-In this situation I needed to set the module parameter ```parm_b``` to the value of a variable ```var_two``` when ```var_one``` was set to a certain value, but in all other cases parameter ```parm_b``` needed to be set to ```var_three```. 
+In this situation I needed to set the module parameter ```parm_b``` to the value of a variable ```var_two``` when ```var_one``` was set to a certain value, but in all other cases parameter ```parm_b``` needed to be set to ```var_three```.
 
-Here's a cut down version of my first approach: 
+Here's a cut down version of my first approach:
 
-```yml
+{% highlight yaml linenos %}
 {% raw %}
 ---
 - name: Handy Ansible Logic
@@ -26,7 +30,7 @@ Here's a cut down version of my first approach:
     three: 3
   tasks:
 
-  - name: Set facts for 1 
+  - name: Set facts for 1
     set_fact:
       output:
         param_a: "{{ one }}"
@@ -41,13 +45,14 @@ Here's a cut down version of my first approach:
     when: not one == 1
 
   - name: Print Output
-    debug: 
+    debug:
       var: output
 {% endraw %}
-```
+{% endhighlight %}
+
 
 Here's the output of the above play:
-```bash
+{% highlight bash linenos %}
 {% raw %}
 user@box:~/$ ansible-playbook example1.yml
 
@@ -67,10 +72,11 @@ ok: [localhost] => {
     }
 }
 {% endraw %}
-```
-or, when we pass in a value for ```var_one``` to trigger the other condition: 
+{% endhighlight %}
 
-```bash
+or, when we pass in a value for ```var_one``` to trigger the other condition:
+
+{% highlight bash linenos %}
 {% raw %}
 user@box:~/$ ansible-playbook example1.yml -e "var_one=2"
 
@@ -90,15 +96,16 @@ ok: [localhost] => {
     }
 }
 {% endraw %}
-```
+{% endhighlight %}
+
 
 It's really straight forward and in this simple example the duplication isn't too bad, but you can see how this would get ugly pretty quickly if you're using a module that needs lots of parameters to be set, or if you have multiple parameters that need similar conditional logic - that would blow out really quickly. Even just setting 3 parameters with this logic would require 8 different tasks to cover the possibilities and some pretty nasty logic in the ```when:``` statements.
 
-# The Solution
+#### The Solution
 
 The answer to this mess turns out to be quite neat. We move the conditional logic out of the ```when:``` and into the call to the variable, the jinja statement, as variables in ansible are jinja templates. Here is what that would look like:
 
-```yaml
+{% highlight yaml linenos %}
 {% raw %}
 ---
 - name: Handy Ansible Logic
@@ -113,20 +120,21 @@ The answer to this mess turns out to be quite neat. We move the conditional logi
   - name: Set values
     set_fact:
       output:
-        param_a: "{{ var_one }}" 
+        param_a: "{{ var_one }}"
         param_b: "{{ var_two if var_one == 1 else var_three }}"
-      
+
   - name: Print Output
-    debug: 
+    debug:
       var: output
 {% endraw %}
-```
+{% endhighlight %}
 
-As you can see we have been able to remove the duplicated code and the when statement. What I really like is the if condition doesn't make the logic hard to read - it's almost plain english. 
+
+As you can see we have been able to remove the duplicated code and the when statement. What I really like is the if condition doesn't make the logic hard to read - it's almost plain english.
 
 Here's the output of the above improved play logic:
 
-```bash 
+{% highlight bash linenos %}
 {% raw %}
 user@box:~/$ ansible-playbook example2.yml
 
@@ -143,11 +151,12 @@ ok: [localhost] => {
     }
 }
 {% endraw %}
-```
+{% endhighlight %}
+
 
 And, again to trigger the other condition:
 
-```bash 
+{% highlight bash linenos %}
 {% raw %}
 user@box:~/$ ansible-playbook example2.yml -e "var_one=2"
 
@@ -164,21 +173,22 @@ ok: [localhost] => {
     }
 }
 {% endraw %}
-```
+{% endhighlight %}
 
-We can still use jinja's filters like any other variable with this approach too: 
+We can still use jinja's filters like any other variable with this approach too:
 
-```yaml
+{% highlight yaml linenos %}
 {% raw %}
 
-  - name: Set 
+  - name: Set
     set_fact:
       output:
         param_a: "{{ var_two if var_one == 1 else omit }}"
 
 {% endraw %}
-```
-Since learning how to use this logic it has been really helpful in quite a few situations. 
+{% endhighlight %}
 
-All of the examples shown are available [here](https://github.com/matthewdennett/2022-06-01-Handy-Ansible-Logic) if you would like a copy. 
+Since learning how to use this logic it has been really helpful in quite a few situations.
+
+All of the examples shown are available [here](https://github.com/matthewdennett/2022-06-01-Handy-Ansible-Logic) if you would like a copy.
 

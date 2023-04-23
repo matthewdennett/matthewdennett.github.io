@@ -1,0 +1,380 @@
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+/*--------------- Layout ---------------*/
+
+
+.portfolio-max-width {
+    max-width: 1100px;
+    margin: auto;
+}
+
+main {
+    background-color: white;
+}
+
+footer {
+    background-size: cover;
+}
+
+.footer-logo {
+    font-family: 'Stalemate', cursive;
+    font-size: 2rem;
+}
+
+.mdl-mini-footer {
+    padding: 15px;
+    line-height: 0;
+    min-height: 25px;
+    max-height: 25px;
+    background-color: #757575;
+}
+
+.mdl-mini-footer__right-section {
+    color: white;
+    /* font-family: 'Stalemate', cursive; */
+    font-size: 2rem;
+    line-height: 35px;
+}
+
+/*--------------- Header ---------------*/
+.portfolio-header {
+  position: relative;
+  background-image: url(/images/header-bg.jpg);
+}
+
+.portfolio-header .mdl-layout__header-row {
+    padding: 0;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.mdl-layout__header .mdl-layout__drawer-button {
+    background-color: transparent;
+    padding: 15px 0;
+    color: black;
+}
+
+.mdl-layout__title {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Stalemate', cursive;
+}
+
+.is-compact .mdl-layout__title span {
+    display: none;
+}
+
+.mdl-layout__header > .flex-column-end {
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.portfolio-logo-row {
+    min-height: 200px;
+    justify-content: flex-end;
+    color: #757575;
+}
+
+.is-compact .portfolio-logo-row {
+    min-height: auto;
+}
+
+.portfolio-logo {
+    background: url(/images/logo.png) 50% no-repeat;
+    background-size: cover;
+    height: 75px;
+    width: 75px;
+    margin: auto auto 10px;
+}
+
+.portfolio-navigation-row {
+    text-transform: uppercase;
+    height: 45px;
+    background-color: #757575;
+}
+
+.portfolio-navigation-row .mdl-navigation {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.portfolio-navigation-row .mdl-navigation__link {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 42px;
+    /* color: #F7F7F7; */
+    /* color: red; */
+}
+
+/*--------------- Cards ---------------*/
+.mdl-card__supporting-text {
+    display: flex;
+    flex-grow: 1;
+    color: rgba(0,0,0,.75)
+}
+
+.portfolio-description {
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+.error404 {
+    text-align: center;
+}
+.mdl-card__title {
+    /* color: white; */
+    background-color: #a4a4a4;
+    /* background-color: #757575; */
+}
+
+.card-title {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1.7rem;
+    margin-left: 15px;
+    color: black;
+}
+
+.text-card-top {
+    padding: 10px 16px 3px 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-card-title {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1.7rem;
+}
+
+.clear-card-subtext {
+    color: rgba(0,0,0,.54);
+}
+
+.bottom-line {
+    border-bottom: 2px solid #e6e6e6;
+    margin-bottom: 7px;
+}
+
+.icon-margin {
+    margin-top: 3px;
+}
+
+
+/*--------------- Text ---------------*/
+/* #certlist {
+    width: 30em;
+    margin: 2.0em auto;
+}
+*/
+
+
+#certlist li {
+    list-style-type: none;
+    float:left;
+    display:inline;
+    position:relative;
+    margin-right: 2.5em;
+    margin-bottom: 2.5em;
+    font-size:0.7em;
+    text-align:center;
+}
+
+#certlist img {
+    margin:0 0 0 0 !important;
+    width:100px;
+    height:100px;
+}
+
+.clip {
+    display: block;
+    /* left: 0; */
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    width: 102px;
+    height: 102px;
+    background: url(/images/certIcons/mask.png) 0 0 no-repeat;
+    background-size: 100px 100px;
+}
+
+/*--------------- Text ---------------*/
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+code {
+    background-color: #e6e6e6;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.font-styled {
+    font-family: 'Stalemate', cursive;
+}
+
+.emphasize {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.subtext {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    /* opacity: 0.75; */
+}
+
+.certtitle {
+    font-size: 0.9rem;
+}
+
+.script-title {
+    /* font-family: 'Stalemate', cursive; */
+    /* color: #757575; */
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 4rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.icon-button {
+    font-size: 2rem;
+}
+
+.color-pink {
+    color: #FAD1D6;
+}
+
+.color-black {
+    color: #000000;
+}
+
+.color-gray {
+    color: #525252;
+}
+
+/*--------------- Blog ---------------*/
+.mdl-chip {
+    font-family: 'Lato', sans-serif;
+    background-color: #d1d1d1;
+    font-size: unset;
+    height: 20px;
+    line-height: 20px;
+}
+
+/*--------------- Contact ---------------*/
+.portfolio-contact .mdl-textfield {
+    width: 100%;
+}
+
+.portfolio-contact form {
+    max-width: 550px;
+    margin: auto;
+}
+
+/*--------------- Others ---------------*/
+.max-width {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.button-left {
+    margin-left: -16px;
+}
+
+.no-top-padding {
+    padding-top: 0;
+}
+
+.negative-bottom-margin {
+    margin-bottom: -5px;
+}
+
+.z0 {
+    z-index: 0;
+}
+
+.z1 {
+    z-index: 1;
+}
+
+.padding-top {
+    padding: 10px 0 0;
+}
+
+.float-right {
+    float: right;
+}
+
+.margin-side {
+    margin: 0 5px;
+}
+
+.margin-side-large {
+    margin: 0 24px;
+}
+
+/*--------------- Unused (but may be useful in the future) ---------------*/
+.portfolio-navigation-row .is-active {
+    position: relative;
+    font-weight: bold;
+}
+
+.portfolio-navigation-row .is-active:after {
+    content: "";
+    width: 70%;
+    height: 2px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(255,64,129);
+}
+
+img.article-image {
+    width: 100%;
+    height: auto;
+}

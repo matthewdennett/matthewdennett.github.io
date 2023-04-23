@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+{% if post.show == true %}
+<div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title text-card-top">
+        <div class="text-card-title">{{ post.title }}</div>
+        <div class="subtext clear-card-subtext">{{ post.date | date: '%d %B %Y' }}</div>
+    </div>
+
+    <div class="mdl-grid mdl-card__supporting-text">
+        <div class="blog-details">
+            {% for tag in post.tags %}
+                {% include chip.html name=tag %}
+            {% endfor %}
+        </div>
+        <div class="portfolio-description">
+
+            {{ post.excerpt }}
+
+        </div>
+        <div>
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent button-left" href={{ post.url }}>
+                Read more
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}

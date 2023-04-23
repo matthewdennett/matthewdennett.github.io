@@ -1,0 +1,32 @@
+
+{% assign page_name = include.name | downcase %}
+{% case page_name %}
+	{% when "asp.net" %}
+		{% assign tagName="asp" %}
+	{% when "github pages" %}
+		{% assign tagName="githubpages" %}
+	{% when "open source" %}
+		{% assign tagName="opensource" %}
+	{% when "cisco aci" %}
+		{% assign tagName="ciscoaci" %}
+	{% when "cisco nexus" %}
+		{% assign tagName="cisconexus" %}
+	{% when "data center" %}
+		{% assign tagName="datacenter" %}
+	{% when "load balancing" %}
+		{% assign tagName="lb" %}
+	{% when "material design" %}
+		{% assign tagName="mdl" %}
+	{% when "microsoft azure" %}
+		{% assign tagName="azure" %}
+	{% when "vulnerability management" %}
+		{% assign tagName="vulnmgmt" %}
+	{% else %}
+		{% assign tagName=include.name %}
+{% endcase %}
+
+<a href="/tagged/{{ tagName | downcase }}">
+    <span class="mdl-chip">
+        <span class="mdl-chip__text">{{ include.name }}</span>
+    </span>
+</a>

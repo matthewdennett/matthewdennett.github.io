@@ -1,17 +1,12 @@
-# Setup
-title:               Matt Dennett
-tagline:             ''
-description:         ''
-url:                 ''
-baseurl:             ''
-#paginate:            5
-permalink:           pretty
+# Site settings
+title: Matt Dennett
+email: dennett.matthew+gh@gmail.com
+description:
+  Matt's Site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
 # About/contact
-author:
-  name:              Matt Dennett
-  email:             dennett.matthew+gh@gmail.com
-
 twitter:            'https://twitter.com'
 linkedin:           'https://www.linkedin.com/in/matthew-dennett'
 github:             'https://github.com/matthewdennett'
@@ -20,9 +15,29 @@ show_excerpts: true
 excerpt_separator: <!--more-->
 show_related_tags: true
 
-# # Gems
-# plugins:
-#  - jekyll-paginate
+
+collections:
+  tagged:
+    output: true
+    permalink: /tagged/:path/
+  education:
+    output: true
+    permalink: /education/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  work_experience:
+    output: true
+    permalink: /work_experience/:path/
+  certifications:
+    output: true
+    permalink: /certifications/:path/
+
+# Build settings
+markdown: kramdown
+permalink: /entries/:year/:month/:day/:title
+highlighter: rouge
+plugins: ["jemoji"]
 
 # Custom vars
 version:             1.1.0

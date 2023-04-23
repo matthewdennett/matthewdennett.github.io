@@ -1,0 +1,7 @@
+{% assign post = include.post_content %}
+<li>
+    <a href="{{ post.link }}" target="_blank">
+    	<img src="{{ site.baseurl }}{{ post.image }}"/>
+		<div class="certtitle"> {{ include.title }}</div>
+    </a>
+</li>
