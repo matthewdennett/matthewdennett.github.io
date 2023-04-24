@@ -22,7 +22,7 @@
 	{% when "vulnerability management" %}
 		{% assign tagName="vulnmgmt" %}
 	{% else %}
-		{% assign tagName=include.name %}
+		{% assign tagName=page_name %}
 {% endcase %}
 
 <a href="/tagged/{{ tagName | downcase }}">

@@ -183,4 +183,6 @@ So now we can create a network range like this...
 
 #### Conclusion
 
+The collection includes a not of really helpfull modules for managing an Infoblox Grid. Unfortunatly, there are a number of modules that are yet to be developed and several modules are missing some options which are avaliable in the WAPI API. I hope that I can find some more time to commit to this project and help develop some of the missing modules. 
+
 The GitHub project has recently changed over to a new set of maintainers, which has slowed down the review and QA process quite a lot whole they are still getting up to spped with the project. At the time of writing this post, the PR is yet to approved and merged. You can find this PR here if you would like to have a closer look.
