@@ -8,8 +8,8 @@ tags:
 - Open Source
 show: true
 ---
-
-Infoblox is a popular tool that enables teams to centrally manage DNS, DHCP, and IP addresses (DDI) efficiently. One way to automate Infoblox is through the use of Ansible with the use of the [Infoblox Ansible collection](https://galaxy.ansible.com/infoblox/nios_modules).
+<p>
+Infoblox is a popular tool that enables teams to centrally manage DNS, DHCP, and IP addresses (DDI) efficiently. One way to automate Infoblox is through the use of {% include chip.html name="Ansible" %} with the use of the <a href="https://galaxy.ansible.com/infoblox/nios_modules">Infoblox Ansible collection</a>.</p>
 
 However, when using the [Infoblox Ansible collection](https://galaxy.ansible.com/infoblox/nios_modules) I quickly encountered some missing functionality…
 
@@ -61,9 +61,9 @@ Now you can define or update a Grid member to be a Grid Master Candiadate like s
 {% endhighlight %}
 
 #### Network Member Assignment
-
-Being able to assign Grid members to a network is a prerequisite for networks to be configured to server DHCP for fixed addresses or ranges. Not being able to assign members directly though the ansible nios_network module is quite limiting for a DDI product.
-
+<p>
+Being able to assign Grid members to a network is a prerequisite for networks to be configured to server DHCP for fixed addresses or ranges. Not being able to assign members directly though the {% include chip.html name="Ansible" %} nios_network module is quite limiting for a DDI product.
+</p>
 The WAPI API commonly uses the concept of a ‘struct’ when there is the need for data to be passed in with a specific structure. The WAPI doco describes a wide variety of structs and their associated properties. Each struct is identified with the key ```_struct``` and the value naming the type of struct being passed in.  Below is an example 'dhcpmember' struct needed to be passed to the WAPI API to associate the Grid member 'member1.localdomain' to a network object.
 
 {% highlight yaml linenos %}
@@ -87,7 +87,7 @@ members:
   - name: 'member1.localdomain'
 {% endhighlight %}
 
-Much cleaner and straight forward for someone not **familiar** with the WAPI API structs.
+Much cleaner and straight forward for someone not familiar with the WAPI API structs.
 
 To apply this conversion I added the following function to the ```api.py``` file, which is called when a network v4 or v6 object is being configured.
 
@@ -101,10 +101,10 @@ def convert_members_to_struct(member_spec):
         member_spec['members'] = [{'_struct': 'dhcpmember', 'name': k['name']} for k in member_spec['members']]
     return member_spec
 {% endhighlight %}
+<p>
+This function uses list comprehension to construct, the required struct key value pairs for each member in the list, when the `members` key has been defined in the {% include chip.html name="Ansible" %} code.</p>
 
-This function uses list comprehension to construct, the required struct key value pairs for each member in the list, when the ```members``` key has been defined in the ansible code.
-
-Now you can assigne Grid Members to a newwork like the example below.
+Now you can assign Grid Members to a network like the example below.
 
 {% highlight yaml linenos %}
 - name: Create network with member assignment for a network ipv4

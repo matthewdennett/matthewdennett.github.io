@@ -6,9 +6,9 @@ tags:
 - Ansible
 show: true
 ---
-
-In Ansible, you can define variables in a variety of places, including inventory files, playbook files, and role defaults and vars files. When defining variables, you can use YAML anchors and aliases to reduce repetition and make your code more readable.
-
+<p>
+In {% include chip.html name="Ansible" %}, you can define variables in a variety of places, including inventory files, playbook files, and role defaults and vars files. When defining variables, you can use YAML anchors and aliases to reduce repetition and make your code more readable.
+</p>
 {% highlight yaml linenos %}
 vars:
   # Define an anchor called "common_vars"
@@ -25,7 +25,7 @@ vars:
 
 <!--more-->
 
-Here's an example of using anchors and aliases in an Ansible playbook:
+<p>Here's an example of using anchors and aliases in an {% include chip.html name="Ansible" %} playbook:</p>
 
 {% highlight yaml linenos %}
 ---
@@ -197,7 +197,7 @@ ok: [localhost] => {
 
 PLAY RECAP ********************************************************************
 {% endhighlight %}
-
-In summary, YAML anchors and aliases are a powerful feature that can help you reduce repetition in your Ansible playbooks and roles and make them more readable and maintainable. By using anchors and aliases, you can avoid copy-pasting the same data multiple times and make it easier to update your variables in the future.
+<p>
+In summary, YAML anchors and aliases are a powerful feature that can help you reduce repetition in your {% include chip.html name="Ansible" %} playbooks and roles and make them more readable and maintainable. By using anchors and aliases, you can avoid copy-pasting the same data multiple times and make it easier to update your variables in the future.</p>
 
 All of the examples shown are available [here](https://github.com/matthewdennett/2023-01-01-YAML-Anchors) if you would like a copy.

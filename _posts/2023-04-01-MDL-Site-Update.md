@@ -19,9 +19,9 @@ The MDL Portfolio template is a pre-built website layout designed by Google's Ma
 One of the things I love about this template is how easy it is to customize. The source code is well-organized and easy to understand, making it simple to make changes to the design or add your own content. MDL also provides extensive documentation and code samples to help you get started.
 
 #### Updating My Site
-
-Updating my site to use the MDL Portfolio template was a straightforward process. I downloaded the template from the MDL website and then replaced the existing content on my site with the template's HTML, CSS, and JavaScript files. I then customized the template to match the style I wanted and added my own content.
-
+<p>
+Updating my site to use the MDL Portfolio template was a straightforward process. I downloaded the template from the MDL website and then replaced the existing content on my site with the template's{% include chip.html name="HTML" %},{% include chip.html name="CSS" %}, and JavaScript files. I then customized the template to match the style I wanted and added my own content.
+</p>
 Rather than starting from scratch, I was able to use the template as a starting point and then make changes as needed. This not only saved me time, but it also ensured that my site had a professional and polished look.
 
 #### Small fixes

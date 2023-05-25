@@ -8,7 +8,7 @@ tags:
 show: true
 ---
 
-In the post [Handy Ansible Logic](https://mdennett.id.au/2020/06/01/Handy-Ansible-Logic/) I described a situation where moving ansible logic out of ```when:``` statement and into an inline Jinja achieved a much cleaner solution. Recently, I had a similar situation where I needed to extend what I was doing in the Jinja. This time, I needed to dynamically construct the a variable to pass into a modules parameter.
+In the post [Handy Ansible Logic](https://mdennett.id.au/entries/2022/06/01/Handy-Ansible-Logic) I described a situation where moving ansible logic out of ```when:``` statement and into an inline Jinja achieved a much cleaner solution. Recently, I had a similar situation where I needed to extend what I was doing in the Jinja. This time, I needed to dynamically construct the a variable to pass into a modules parameter.
 
 {% highlight yaml linenos %}
 {% raw %}
