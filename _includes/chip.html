@@ -20,6 +20,10 @@
 		{% assign tagName="azure" %}
 	{% when "vulnerability management" %}
 		{% assign tagName="vulnmgmt" %}
+	{% when "f5-101" %}
+		{% assign tagName="f5" %}
+	{% when "f5-201" %}
+		{% assign tagName="f5" %}
 	{% else %}
 		{% assign tagName=page_name %}
 {% endcase %}
