@@ -23,3 +23,4 @@ Log into Tenable Security Center as an admin user. Navigate to System -> Diagnos
 # 2
 Constrict the download URL with
   - https://plugins.nessus.org/get.php?u=<PluginSubscriptionLogin>&p=<PluginSubscriptionPassword>&f=SecurityCenterFeed48.tar.gz
+  - https://plugins.nessus.org/get.php?u=c2f9f3b7bd9c743c0bf6ea736b39f6e2&p=1253077268824ca78535a490e81120bf&f=all.tar.gz
