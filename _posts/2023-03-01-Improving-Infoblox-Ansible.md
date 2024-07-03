@@ -36,7 +36,7 @@ master_candidate=dict(type='bool', default=False)
 
 This update adds the ```master_candidtate``` element with the default value being set to false.
 
-Now you can define or update a Grid member to be a Grid Master Candiadate like show in the example below.
+Now you can define or update a Grid member to be a Grid Master Candidate like show in the example below.
 
 {% highlight yaml linenos %}
 ---
@@ -135,7 +135,7 @@ Here is what the function looks like…
 {% highlight Python linenos %}
 def convert_range_member_to_struct(module):
     '''This function will check the module input to ensure that only one member assignment type is specified at once.
-    Member passed in is converted to the correct struct for the API to understand bassed on the member type.
+    Member passed in is converted to the correct struct for the API to understand based on the member type.
     '''
     # Error checking that only one member type was defined
     params = [k for k in module.params.keys() if module.params[k] is not None]
@@ -183,6 +183,6 @@ So now we can create a network range like this...
 
 #### Conclusion
 
-The collection includes a not of really helpfull modules for managing an Infoblox Grid. Unfortunatly, there are a number of modules that are yet to be developed and several modules are missing some options which are avaliable in the WAPI API. I hope that I can find some more time to commit to this project and help develop some of the missing modules. 
+The collection includes a lot of really helpful modules for managing an Infoblox Grid. Unfortunately, there are a number of modules that are yet to be developed and several modules are missing some options which are available in the WAPI API. I hope that I can find some more time to commit to this project and help develop some of the missing modules.
 
-The GitHub project has recently changed over to a new set of maintainers, which has slowed down the review and QA process quite a lot whole they are still getting up to spped with the project. At the time of writing this post, the PR is yet to approved and merged. You can find this PR here if you would like to have a closer look.
+The GitHub project has recently changed over to a new set of maintainers, which has slowed down the review and QA process quite a lot whole they are still getting up to speed with the project. At the time of writing this post, the PR is yet to approved and merged. You can find this PR here if you would like to have a closer look.

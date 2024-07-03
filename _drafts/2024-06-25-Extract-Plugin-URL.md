@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tenable Plugin Downloads
+title: Extract Tenable Plugin Downloads URL
 tags:
 - Tenable
 show: true
