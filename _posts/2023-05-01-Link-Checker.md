@@ -15,14 +15,14 @@ With the update for my site to use “chips” to link to related pages its very
 <p>
 The process to install install <a href="https://pypi.org/project/LinkChecker/">LinkChecker</a> is the same as any{% include chip.html name="Python" %}package. I tend to always work in a python virtual environment as shown in my example below but you don't have to.
 </p>
-1. First create a Pythonvirtual environment
+1. First create a Python virtual environment
 
 {% highlight bash linenos %}
 user@box:~/linkchecker$ python3 -m venv venv
 user@box:~/linkchecker$ source venv/bin/activate
 {% endhighlight %}
 
-2. Install the linkchecker package with pip 
+2. Install the linkchecker package with pip
 
 {% highlight bash linenos %}
 (venv) user@box:~/linkchecker$ pip install linkchecker
