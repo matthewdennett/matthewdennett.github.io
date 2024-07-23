@@ -27,7 +27,7 @@ The modules default settings work perfect for about 90% of the situation where I
 - Host Cisco router firmware to be downloaded to remote devices before a software upgrade.
 - Copying files from one server to another, where SCP or a remote file share wasn't available.
 - Sharing files from my local machine to colleagues without having to hop through a file share.
-- Copying files out from the WSL session on my local machine to another location. Maybe this is just being a tad lazy, I could definately just browse down to the WSL install location and copy the flies out that way too.
+- Copying files out from the WSL session on my local machine to another location. Maybe this is just being a tad lazy, I could definitely just browse down to the WSL install location and copy the flies out that way too.
 
 
 #### Module Options

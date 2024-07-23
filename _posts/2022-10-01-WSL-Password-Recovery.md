@@ -9,7 +9,7 @@ show: true
 
 I have been using WSL for some time now. Having quick and easy access to a nix distribution is so handy in many ways. Not having to worry about managing VMs in a hypervisor makes the whole experience so much nicer. Today I switched back to a Ubuntu install I hadn’t used from quite a while and the first thing was to run sum updates but I had forgotten the password I had set.
 
-This post covers the simple process to preform a password recovery of an WSL install.
+This post covers the simple process to perform a password recovery of a WSL install.
 
 <!--more-->
 
