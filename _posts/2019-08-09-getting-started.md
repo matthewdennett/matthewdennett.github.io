@@ -7,10 +7,11 @@ author: cotes
 date: 2019-08-09 20:55:00 +0800
 categories: [Blogging, Tutorial]
 tags: [getting started]
-pin: true
+# pin: true
 media_subpath: '/posts/20180809'
 ---
 
+hello
 ## Creating a Site Repository
 
 When creating your site repository, you have two options depending on your needs:
@@ -118,7 +119,7 @@ Prepare the following:
 
 Next, configure the _Pages_ service:
 
-1. Go to your repository on GitHub. Select the _Settings_ tab, then click _Pages_ in the left navigation bar. In the **Source** section (under _Build and deployment_), select [**GitHub Actions**][pages-workflow-src] from the dropdown menu.  
+1. Go to your repository on GitHub. Select the _Settings_ tab, then click _Pages_ in the left navigation bar. In the **Source** section (under _Build and deployment_), select [**GitHub Actions**][pages-workflow-src] from the dropdown menu.
    ![Build source](pages-source-light.png){: .light .border .normal w='375' h='140' }
    ![Build source](pages-source-dark.png){: .dark .normal w='375' h='140' }
 
