@@ -2,10 +2,9 @@
 title: Tenable Plugin Downloads Links
 categories: [Blog, Tenable]
 tags:
-- tenable
-- tips
-- plugins
-toc: true
+  - Tenable
+  - Tips
+  - Plugins
 ---
 
 There are a few instances where you might need to manually download the latest set of Tenable plugin files. If you have the link handy, it's a straightforward task. However, if the download link hasn't been recorded during installation or has been lost over time, it's a little more tricky. Here, I'll run through the process to recover the link from a licensed Tenable Security Center.
