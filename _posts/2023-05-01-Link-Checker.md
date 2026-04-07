@@ -1,30 +1,29 @@
 ---
-layout: post
 title: Python Link Checker
+categories: [Blog, Tools]
 tags:
-- python
-show: true
+  - Python
+  - Tips
+  - Tools
+
 ---
 
-With the update for my site to use “chips” to link to related pages its very easy for me tag a post with a tag that doesn't have the supporting “tagged” page and resulting in a broken link.  With the number of chips and tags I have across this site manually verifying each one manually is far to inefficient. Using [LinkChecker](https://pypi.org/project/LinkChecker/) makes this process quick and easy.
+When my site to used “chips” to link to related pages its very easy for me tag a post with a tag that doesn't have the supporting “tagged” page and resulting in a broken link. With the number of chips and tags I have across this site manually verifying each one manually is far to inefficient. Using [LinkChecker](https://pypi.org/project/LinkChecker/) makes this process quick and easy.
 
+## Install
 
-<!--more-->
+The process to install install [LinkChecker](https://pypi.org/project/LinkChecker/) is the same as any python package. I tend to always work in a python virtual environment as shown in my example below but you don't have to.
 
-#### Install
-<p>
-The process to install install <a href="https://pypi.org/project/LinkChecker/">LinkChecker</a> is the same as any{% include chip.html name="Python" %}package. I tend to always work in a python virtual environment as shown in my example below but you don't have to.
-</p>
 1. First create a Python virtual environment
 
-{% highlight bash linenos %}
+```bash
 user@box:~/linkchecker$ python3 -m venv venv
 user@box:~/linkchecker$ source venv/bin/activate
-{% endhighlight %}
+```
 
 2. Install the linkchecker package with pip
 
-{% highlight bash linenos %}
+```bash
 (venv) user@box:~/linkchecker$ pip install linkchecker
 Collecting linkchecker
   Downloading LinkChecker-10.2.1-py3-none-any.whl (286 kB)
@@ -53,15 +52,15 @@ Collecting urllib3<3,>=1.21.1
 Installing collected packages: soupsieve, beautifulsoup4, dnspython, charset-normalizer, idna, certifi, urllib3, requests, linkchecker
 Successfully installed beautifulsoup4-4.12.2 certifi-2023.5.7 charset-normalizer-3.1.0 dnspython-2.3.0 idna-3.4 linkchecker-10.2.1 requests-2.31.0 soupsieve-2.4.1 urllib3-2.0.2
 (venv) user@box:~/linkchecker$
-{% endhighlight %}
+```
 
-If you choose not to use a virtual environment you will most likely need to update your ```$PATH``` to include the instillation directory.
+If you choose not to use a virtual environment you will most likely need to update your `$PATH` to include the instillation directory.
 
-#### Usage
+## Usage
 
 This package couldn't be much easier to use. Like shown in the example below you simply need to pass in the URL of the page you want to check. By default this will recursively check all link for the single domain passed in.
 
-{% highlight bash linenos %}
+```bash
 (venv) user@box:~/linkchecker$ linkchecker http://127.0.0.1:4000
 INFO linkcheck.cmdline 2023-05-25 20:47:32,237 MainThread Checking intern URLs only; use --check-extern to check extern URLs.
 LinkChecker 10.2.1
@@ -86,17 +85,17 @@ URL lengths: min=19, max=110, avg=47.
 
 Thats it. 105 links in 143 URLs checked. 0 warnings found. 0 errors found.
 Stopped checking at 2023-05-25 20:47:55+010 (23 seconds)
-{% endhighlight %}
+```
 
 
-The default behavior also restricts checks to the domain that you pass in. So you will commonly want to use the ```--check-extern``` flag verify that any external links you have.
+The default behavior also restricts checks to the domain that you pass in. So you will commonly want to use the `--check-extern` flag verify that any external links you have.
 
 
-#### Error Output
+## Error Output
 
 Here is an example of the output produced when a broken link is identified. You can easily see the page `Parrent URL` and even the line number of the broken link.
 
-{% highlight bash linenos %}
+```bash
 URL        `https://mdennett.id.au/2020/06/01/Handy-Ansible-Logic/'
 Name       `Handy Ansible Logic'
 Parent URL http://127.0.0.1:4000/blog/, line 422, col 28
@@ -105,17 +104,17 @@ Check time 3.138 seconds
 Size       1KB
 Result     Error: 404 Not Found
 10 threads active,     4 links queued,   86 links in 138 URLs checked, runtime 21 seconds
-{% endhighlight %}
+```
 
-There are a number of helpful output formats such as text, CSV, HTML. Check out the ```--help``` information for a full list.
+There are a number of helpful output formats such as text, CSV, HTML. Check out the `--help` information for a full list.
 
-#### Excludes
-<p>
-It's quite possible that you have a broken link that you want to exclude from the result which can be achieved with the ```--ignore_url``` flag. If needed you can list the flag multiple times. Just pass in a {% include chip.html name="Python" %} REGEX to match the links to be ignored.
-</p>
-{% highlight bash linenos %}
+## Excludes
+
+It's quite possible that you have a broken link that you want to exclude from the result which can be achieved with the `--ignore_url` flag. If needed you can list the flag multiple times. Just pass in a Python REGEX to match the links to be ignored.
+
+```bash
 (venv) user@box:~/linkchecker$ linkchecker http://127.0.0.1:4000 --ignore-url medium.com
-{% endhighlight %}
+```
 
 
 There are number of online tool that provide a very similar result. However, the down side of this is that your site needs to be published and available online, which might not always be possible. In no particular order here are a couple that I found.

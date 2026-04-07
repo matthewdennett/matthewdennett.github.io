@@ -1,4 +1,0 @@
----
-layout: tagged
-name: Python
----
