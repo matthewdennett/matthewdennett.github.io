@@ -1,0 +1,9 @@
+---
+title: "PCNSE"
+description: "Palo Alto Networks Certified Network Security Engineer"
+link: https://www.credly.com/badges/b6634e00-9901-44c6-b78f-0712db6d9658/public_url
+image:
+  path: /assets/img/certIcons/cert_pcnse.png
+order: 40
+
+---
