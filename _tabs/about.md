@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 1
 ---
 
 I am a Network Engineer, working as an Automation and Security Engineer, living in Brisbane, Australia.
